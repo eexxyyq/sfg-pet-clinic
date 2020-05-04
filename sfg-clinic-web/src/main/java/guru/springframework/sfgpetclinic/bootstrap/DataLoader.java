@@ -17,14 +17,14 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Owner owner1 = new Owner();
-        owner1.setFirstName("FIRST_FIRST_NAME");
-        owner1.setLastName("FIRST_LAST_NAME");
+        owner1.setFirstName("John");
+        owner1.setLastName("Carrot");
 
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
-        owner2.setFirstName("SECOND_FIRST_NAME");
-        owner2.setLastName("SECOND_LAST_NAME");
+        owner2.setFirstName("Lisa");
+        owner2.setLastName("Backlog");
 
         ownerService.save(owner2);
 
@@ -32,14 +32,14 @@ public class DataLoader implements CommandLineRunner {
 
 
         Vet vet1 = new Vet();
-        vet1.setFirstName("FIRST_FIRST_NAME");
-        vet1.setLastName("FIRST_LAST_NAME");
+        vet1.setFirstName("Sam");
+        vet1.setLastName("Tourney");
 
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
-        vet2.setFirstName("SECOND_FIRST_NAME");
-        vet2.setLastName("SECOND_LAST_NAME");
+        vet2.setFirstName("Amanda");
+        vet2.setLastName("Kingdom");
 
         vetService.save(vet2);
 
