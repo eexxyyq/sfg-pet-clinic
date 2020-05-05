@@ -1,8 +1,8 @@
 package guru.springframework.sfgpetclinic.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -11,11 +11,21 @@ import java.util.Set;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@Builder
+@NoArgsConstructor
 @Entity
 @Table(name = "owners")
 public class Owner extends Person {
+
+    @Builder
+    public Owner(Long id, String firstName, String lastName, Set<Pet> pets,
+                 String address, String telephone, String city) {
+        super(id, firstName, lastName);
+        this.pets = pets;
+        this.address = address;
+        this.telephone = telephone;
+        this.city = city;
+    }
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
     @Column(name = "address")
